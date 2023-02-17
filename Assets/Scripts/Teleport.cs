@@ -34,16 +34,17 @@ public class Teleport : MonoBehaviour
         return null;
     }
 
-    void teleport()
+    public void teleport()
     {
         GameObject teleporter = GetCurrentTeleportLocation();
         if (teleporter != null)
         {
-            Vector3 distance = transform.position - teleporter.transform.position;
+            Vector3 distance = teleporter.transform.position - transform.position;
+            // TODO: May need to adjust to detect player
             foreach (Collider other in TriggerList)
             {
                 Vector3 originalPosition = other.transform.position;
-                other.gameObject.transform.position.Set(originalPosition.x + distance.x, originalPosition.y + distance.y, originalPosition.z + distance.z);
+                other.transform.position = new Vector3(originalPosition.x + distance.x, originalPosition.y + distance.y + 0.01f, originalPosition.z + distance.z);
             }
         }
         

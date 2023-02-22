@@ -8,11 +8,8 @@ public class SelectTeleporter : MonoBehaviour
     public GameObject teleporterSelection;
 
 
-    private void OnMouseOver()
+    public void SetTeleporter()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
             parentTeleporter.TeleportTo = teleporterSelection;
-        }
     }
 }

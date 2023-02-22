@@ -6,9 +6,13 @@ public class Teleport : MonoBehaviour
 {
     public GameObject TeleportTo;
 
-    private GameObject[] AllTeleporters;
+    public GameObject Player;
 
-    private List<Collider> TriggerList = new List<Collider>();
+    public Collider PlayerHead;
+
+    public GameObject[] AllTeleporters;
+
+    public List<Collider> TriggerList = new List<Collider>();
     //The list of colliders currently inside the trigger
     // Start is called before the first frame update
     void Start()
@@ -45,6 +49,12 @@ public class Teleport : MonoBehaviour
             {
                 Vector3 originalPosition = other.transform.position;
                 other.transform.position = new Vector3(originalPosition.x + distance.x, originalPosition.y + distance.y + 0.01f, originalPosition.z + distance.z);
+
+                if (other == PlayerHead)
+                {
+                    originalPosition = Player.transform.position;
+                    Player.transform.position = new Vector3(originalPosition.x + distance.x, originalPosition.y + distance.y + 0.01f, originalPosition.z + distance.z);
+                }
             }
         }
         
@@ -70,5 +80,19 @@ public class Teleport : MonoBehaviour
             //remove it from the list
             TriggerList.Remove(other);
         }
+    }
+
+    void SetTeleportDestinationRed()
+    {
+    }
+
+    void SetTeleportDestinationBlue()
+    {
+
+    }
+
+    void SetTeleportDestinationYellow()
+    {
+
     }
 }

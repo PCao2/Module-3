@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/StreamingAssets/SteamVR/actions.json.meta
 guid: 464d84815938acc4d83f71521c249468
+========
+guid: 1a8c97db3ae094d4193795a0c031d4e0
+folderAsset: yes
+>>>>>>>> 651674295d83a0f284448d083f79aa7c4508335d:Assets/Prefabs.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

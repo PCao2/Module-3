@@ -12,11 +12,8 @@ public class TeleporterButton : MonoBehaviour
         
     }
 
-    private void OnMouseOver()
+    public void OnButtonPress()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Teleporter.teleport();
-        }
+        Teleporter.teleport();
     }
 }

@@ -47,12 +47,9 @@ public class Teleport : MonoBehaviour
             // TODO: May need to adjust to detect player
             foreach (Collider other in TriggerList)
             {
-                Vector3 originalPosition = other.transform.position;
-                other.transform.position = new Vector3(originalPosition.x + distance.x, originalPosition.y + distance.y + 0.01f, originalPosition.z + distance.z);
-
                 if (other == PlayerHead)
                 {
-                    originalPosition = Player.transform.position;
+                    Vector3 originalPosition = Player.transform.position;
                     Player.transform.position = new Vector3(originalPosition.x + distance.x, originalPosition.y + distance.y + 0.01f, originalPosition.z + distance.z);
                 }
             }

@@ -20,16 +20,15 @@ public class KeypadCode : MonoBehaviour
     {
         current = current + nextDigit;
 
-        keypadScreen.GetComponent<Renderer>().material = keypadMaterials[current.Length-1];
-
-        if (current.Length >= 4) {
+        if (current.Length >= 3) {
             bool isCorrect = code == current;
             door.isOpened = isCorrect;
             if (!isCorrect) {
-                keypadScreen.GetComponent<Renderer>().material = keypadMaterials[0];
                 current = "";
             }
    
         }
+
+        keypadScreen.GetComponent<Renderer>().material = keypadMaterials[current.Length];
     }
 }
